@@ -1,7 +1,7 @@
 <div class="add_dialog_wrapper">
     <div class="input_wrapper">
         <p>Title</p>
-        <input [(ngModel)]="title" type="text">
+        <input [(ngModel)]="title" type="text" required>
     </div>
     <div class="input_wrapper">
         <p>Description</p>
@@ -9,7 +9,7 @@
     </div>
     <div class="btn_wrapper">
         <button class="btn emptyBtn" (click)="closeDialog()">Cancel</button>
-        <button class="btn fullBtn" (click)="addNote()">add note</button>
+        <button class="btn fullBtn" (click)="addNote()" [disabled]="title.length == 0 || description.length == 0">add note</button>
     </div>
     
 </div>
