@@ -26,6 +26,7 @@ export class NoteListComponent {
 
   changeFavFilter(filter: "all" | "fav") {
     this.favFilter = filter;
+    filter == 'fav' ? this.noteService.subMarkedNotesList() : this.noteService.subNotesList();
   }
 
   changeTrashStatus() {
